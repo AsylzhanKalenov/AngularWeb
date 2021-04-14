@@ -1,0 +1,62 @@
+<h1>Список моделей</h1>
+<input type="button" value="Добавить" class="btn btn-default" (click)="add()" />
+<table *ngIf="tableMode; else create" class="table table-striped">
+  <thead>
+    <tr>
+      <td>Имя</td>
+      <td>Количество рабочих</td>
+      <td>Город</td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of companies">
+      <ng-template [ngIf]="company?.id != p.id" [ngIfElse]="edit">
+        <td>{{p?.name}}</td>
+        <td>{{p?.employeekol}}</td>
+        <td>{{p?.city}}</td>
+        <td>
+          <button class="btn btn-sm btn-primary" (click)="editProduct(p)">Изменить</button>
+          <button class="btn btn-sm btn-danger" (click)="delete(p)">Удалить</button>
+        </td>
+      </ng-template>
+    </tr>
+  </tbody>
+</table>
+
+<!--шаблон для редактирования-->
+<ng-template #edit>
+  <td>
+    <input type="text" [(ngModel)]="company.name" class="form-control" />
+  </td>
+  <td>
+    <input type="number" [(ngModel)]="company.employeekol" class="form-control" />
+  </td>
+  <td>
+    <input type="text" [(ngModel)]="company.city" class="form-control" />
+  </td>
+  <td>
+    <input type="button" value="Сохранить" (click)="save()" class="btn btn-sm btn-success" />
+    <input type="button" value="Отмена" (click)="cancel()" class="btn btn-sm btn-warning" />
+  </td>
+</ng-template>
+
+<!--шаблон для добавления-->
+<ng-template #create>
+  <div class="form-group">
+    <label>Имя</label>
+    <input type="text" [(ngModel)]="company.name" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Количество рабочих</label>
+    <input type="number" [(ngModel)]="company.employeekol" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label>Город</label>
+    <input type="text" [(ngModel)]="company.city" class="form-control" />
+  </div>
+  <div>
+    <input type="button" value="Сохранить" (click)="save()" class="btn btn-success" />
+    <input type="button" value="Отмена" (click)="cancel()" class="btn btn-warning" />
+  </div>
+</ng-template>

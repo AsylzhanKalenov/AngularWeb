@@ -1,0 +1,94 @@
+<ul class="nav hrmodules">
+  <li class="nav-item">
+    <a class="nav-link" href="#">Новые заявки</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Персонал</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Отчет</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Настройки</a>
+  </li>
+</ul>
+<div class="userlist">
+  <ul class="nav nav-pills statusorder">
+    <li class="nav-item">
+      <a class="nav-link" href="#">В обработке</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Отмененные</a>
+    </li>
+  </ul>
+
+
+  <h5 style="color: #517187;">Поиск:</h5>
+  <div class="search">
+    <table>
+      <colgroup>
+        <col width="7%">
+        <col width="10%">
+        <col width="27%">
+        <col width="26%">
+        <col width="22%">
+        <col width="8%">
+      </colgroup>
+      <tr>
+        <td>
+          <input [(ngModel)] ="usersearch.id" name="" placeholder="Номер">
+        </td>
+        <td>
+          <input [(ngModel)] ="usersearch.status" type="text" name="" placeholder="Статус">
+        </td>
+        <td>
+          <input [(ngModel)] ="usersearch.name" type="text" name="" placeholder="Фио">
+        </td>
+        <td>
+          <select [(ngModel)]="usersearch.positionId">
+            <option value="" selected>Выберите специальность</option>
+            <option *ngFor="let p of positions" [ngValue]="p.name">{{p.name}}</option>
+          </select>
+        </td>
+        <td>
+          <input type="text" name="" placeholder="Дата">
+        </td>
+        <td>
+          <input type="button" class="btn btn-success" value="Найти" (click)="searchUser()">
+        </td>
+
+
+      </tr>
+    </table>
+  </div>
+  <br>
+  <table>
+    <colgroup>
+      <col width="7%">
+      <col width="10%">
+      <col width="27%">
+      <col width="26%">
+      <col width="22%">
+      <col width="8%">
+    </colgroup>
+    <tr>
+      <th>Номер</th>
+      <th>Статус</th>
+      <th>ФИО</th>
+      <th>Специальность</th>
+      <th>Дата записи</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let u of users; let even = even; let odd = odd" [ngClass]="{ odd: odd, even: even }">
+        <td></td>
+        <td></td>
+        <td>{{u.name}}</td>
+        <td>{{u.position!=null?u.position.name:''}}</td>
+        <td>{{u.regDate | date :'short'}}</td>
+        <td><input type="button" name="btn" value="Просмотреть"></td>
+    </tr>
+
+    
+  </table>
+
+</div>

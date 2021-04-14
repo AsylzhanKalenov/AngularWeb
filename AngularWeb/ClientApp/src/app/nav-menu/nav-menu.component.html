@@ -1,0 +1,52 @@
+<header>
+  <!--<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+      <a class="navbar-brand" [routerLink]="['/']">AngularWeb</a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+           [ngClass]="{ show: isExpanded }">
+        <ul class="navbar-nav flex-grow">
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']"
+              [routerLinkActiveOptions]="{ exact: true }">
+            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>-->
+
+  <nav class="navbar navbar-expand-sm navbar-light">
+    <ul class="navbar-nav justify-content-center" style="margin-left: 36px;">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Главная</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">О компании</a>
+      </li>
+    </ul>
+
+    <ul class="nav justify-content-end" style="margin: 0 36px;">
+      
+      <li class="loginlink nav-item">
+        <a href="#">Личный кабинет</a> |
+        <a href="#">Регистрация</a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
