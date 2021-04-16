@@ -36,10 +36,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\company.ts" />
     <None Remove="ClientApp\src\app\companylist\data.service.ts" />
+    <None Remove="ClientApp\src\app\userlist\check-user\docs-service.ts" />
+    <None Remove="ClientApp\src\app\userlist\check-user\UserDocs.ts" />
     <None Remove="ClientApp\src\app\userlist\data.service.ts" />
     <None Remove="ClientApp\src\app\userlist\User.ts" />
+    <None Remove="ClientApp\src\app\_services\signin.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DocsService } from './docs-service';
 
 @Component({
   selector: 'app-check-user',
