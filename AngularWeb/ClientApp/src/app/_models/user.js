@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Position = exports.Company = exports.UserRole = exports.User = void 0;
 var User = /** @class */ (function () {
-    function User(id, name, surname, lastname, male, status, birthDate, phone, email, password, defaultpass, regDate, roleId, companyId, positionId, role, company, position) {
+    function User(id, name, surname, lastname, male, status, birthDate, phone, email, password, defaultpass, regDate, roleId, companyId, positionId, role, company, position, token) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -21,6 +21,7 @@ var User = /** @class */ (function () {
         this.role = role;
         this.company = company;
         this.position = position;
+        this.token = token;
     }
     return User;
 }());

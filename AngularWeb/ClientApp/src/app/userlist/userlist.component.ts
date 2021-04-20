@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
 import { User, Role, Company } from './user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userlist',
@@ -14,6 +15,7 @@ export class UserlistComponent implements OnInit {
   users: any = [];
   order_row: boolean = false;
   positions: any = [];
+  router: Router;
   constructor(private dataService: DataService) { }
 
   ngOnInit() {

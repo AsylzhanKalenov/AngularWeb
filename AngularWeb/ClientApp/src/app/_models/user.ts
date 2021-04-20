@@ -19,7 +19,8 @@ export class User {
     public positionId?: number,
     public role?: UserRole,
     public company?: Company,
-    public position?: Position
+    public position?: Position,
+    public token? : string
   ) { }
 }
 

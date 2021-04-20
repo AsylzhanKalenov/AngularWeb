@@ -9,10 +9,10 @@ import { Signin } from './signin';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
-  private AuthUrl = "https://localhost:44340/api/auth";
+    private AuthUrl = "https://localhost:44340/api/auth";
     private userSubject: BehaviorSubject<User>;
-  public user: Observable<User>;
-  public signin: Signin;
+    public user: Observable<User>;
+    public signin: Signin;
 
     constructor(
         private router: Router,
@@ -26,8 +26,8 @@ export class AuthenticationService {
         return this.userSubject.value;
     }
 
-  login(username: string, password: string) {
-    return this.http.post<any>(`${this.AuthUrl}`, { username, password })
+    login(email: string, password: string) {
+    return this.http.post<any>(`${this.AuthUrl}/signin`, { email, password })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('user', JSON.stringify(user));

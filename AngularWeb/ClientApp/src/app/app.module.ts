@@ -22,7 +22,6 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
   declarations: [
     AppComponent,
     NavMenuComponent,
-    ReactiveFormsModule,
     UserlistComponent,
     NewOrderComponent,
     CheckUserComponent,
@@ -31,6 +30,7 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     AppRoutingModule
   ],
