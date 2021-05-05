@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User, Role, Company } from './user';
+import { Users, Role, Company } from './users';
 
 @Injectable({
   providedIn: 'root'
@@ -24,17 +24,17 @@ export class DataService {
     return this.http.get(this.url + '/' + id);
   }
 
-  createProduct(product: User) {
+  createProduct(product: Users) {
     return this.http.post(this.url, product);
   }
-  updateProduct(product: User) {
+  updateProduct(product: Users) {
 
     return this.http.put(this.url, product);
   }
   deleteProduct(id: number) {
     return this.http.delete(this.url + '/' + id);
   }
-  getSearchUser(user: User) {
+  getSearchUser(user: Users) {
     this.search = '?name=' + user.name + '&company=' + user.company.name + '&position' + user.position.name;
     return this.http.get(this.url + '/getuser' + this.search);
   }

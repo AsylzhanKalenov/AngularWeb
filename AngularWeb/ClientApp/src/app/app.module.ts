@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -17,6 +16,7 @@ import { CheckUserComponent } from './userlist/check-user/check-user.component';
 import { LoginComponent } from './login';
 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { ImgCommentComponent } from './userlist/check-user/img-comment/img-comment.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
     UserlistComponent,
     NewOrderComponent,
     CheckUserComponent,
-    LoginComponent
+    LoginComponent,
+    ImgCommentComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -1,0 +1,8 @@
+table td.td-col1 {
+  text-align: right;
+  padding-right: 18px;
+}
+table.registr tr td input.uncorrect {
+  width: 2em;
+  height: 1.6em;
+}

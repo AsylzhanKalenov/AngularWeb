@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
-import { User, Role, Company } from './user';
+import { Users, Role, Company } from './users';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
   providers: [DataService]
 })
 export class UserlistComponent implements OnInit {
-  user: User = new User();   // изменяемый товар
-  usersearch: User = new User();
+  user: Users = new Users();   // изменяемый товар
+  usersearch: Users = new Users();
   users: any = [];
   order_row: boolean = false;
   positions: any = [];
@@ -21,6 +21,7 @@ export class UserlistComponent implements OnInit {
   ngOnInit() {
     this.loadPositions();
     this.loadUsers();    // загрузка данных при старте компонента
+
   }
   // получаем данные через сервис
   loadUsers() {

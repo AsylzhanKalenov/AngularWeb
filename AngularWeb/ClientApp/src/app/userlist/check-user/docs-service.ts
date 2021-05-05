@@ -1,38 +1,37 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { UserDocs} from './userdocs';
+import { Users } from '../users';
+import { UserDocs } from './userdocs';
+import { CheckCat } from './checkcat';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DocsService {
 
-  private url = "https://localhost:44340/api/userdocs";
+  private urlDocs = "https://localhost:44340/api/userdocs";
+  private urlUsers = "https://localhost:44340/api/auth";
+  private urlCheck = "https://localhost:44340/api/checkcats";
 
 
   constructor(private http: HttpClient) {
   }
 
   getProducts(): Observable<any[]> {
-    return this.http.get<any>(this.url);
+    return this.http.get<any>(this.urlDocs);
   }
 
   getProduct(id: number) {
-    return this.http.get(this.url + '/' + id);
+    return this.http.get(this.urlDocs + '/' + id);
   }
-
-  createProduct(product: UserDocs) {
-    return this.http.post(this.url, product);
+  getUser(email: string): Observable<Users> {
+    return this.http.get(this.urlUsers + '/' + email);
   }
-  updateProduct(product: UserDocs) {
-
-    return this.http.put(this.url, product);
+  GetUserDocByUserId(id: number): Observable<UserDocs> {
+    return this.http.get(this.urlDocs + '/GetUserDocByUserId?userid='+id)
   }
-  deleteProduct(id: number) {
-    return this.http.delete(this.url + '/' + id);
-  }
-  GetUserDocByUserId(product: UserDocs) {
-    return this.http.get(this.url + '/GetUserDocByUserId?userid=7')
+  postComment(check: CheckCat) {
+    return this.http.post(this.urlCheck, check);
   }
 }

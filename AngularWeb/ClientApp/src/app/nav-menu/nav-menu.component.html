@@ -43,7 +43,6 @@
     <ul class="nav justify-content-end" style="margin: 0 36px;">
         <li class="nav-item" *ngIf="user as value; else registr">
           <a href="#" class="nav-link">Hello {{user.surname}} {{user.name}}</a>
-          <a href="#">Личные данные</a>
           <a href="#" class="nav-link bg-danger" (click)="logout()">Logout</a>
         </li>
         <ng-template #registr>

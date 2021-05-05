@@ -38,10 +38,11 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\companylist\data.service.ts" />
     <None Remove="ClientApp\src\app\nav-menu\nav-menu.module.ts" />
+    <None Remove="ClientApp\src\app\userlist\check-user\CheckCat.ts" />
     <None Remove="ClientApp\src\app\userlist\check-user\docs-service.ts" />
     <None Remove="ClientApp\src\app\userlist\check-user\UserDocs.ts" />
     <None Remove="ClientApp\src\app\userlist\data.service.ts" />
-    <None Remove="ClientApp\src\app\userlist\User.ts" />
+    <None Remove="ClientApp\src\app\userlist\Users.ts" />
     <None Remove="ClientApp\src\app\_services\signin.ts" />
   </ItemGroup>
 

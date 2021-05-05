@@ -2,24 +2,24 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserDocs = void 0;
 var UserDocs = /** @class */ (function () {
-    function UserDocs(userId, fileCatsId, Specialization, Udv, Pension, Certificates, Employhis, Addres, Conviction, Narcodisp, Psychodisp, Military, Docphoto, Refmainjob, Marriage, Cash, Forma086, fileByte) {
+    function UserDocs(userId, fileCatsId, specialization, udv, pension, certificates, employhis, addres, conviction, narcodisp, psychodisp, military, docphoto, refmainjob, marriage, cash, forma086, fileByte) {
         this.userId = userId;
         this.fileCatsId = fileCatsId;
-        this.Specialization = Specialization;
-        this.Udv = Udv;
-        this.Pension = Pension;
-        this.Certificates = Certificates;
-        this.Employhis = Employhis;
-        this.Addres = Addres;
-        this.Conviction = Conviction;
-        this.Narcodisp = Narcodisp;
-        this.Psychodisp = Psychodisp;
-        this.Military = Military;
-        this.Docphoto = Docphoto;
-        this.Refmainjob = Refmainjob;
-        this.Marriage = Marriage;
-        this.Cash = Cash;
-        this.Forma086 = Forma086;
+        this.specialization = specialization;
+        this.udv = udv;
+        this.pension = pension;
+        this.certificates = certificates;
+        this.employhis = employhis;
+        this.addres = addres;
+        this.conviction = conviction;
+        this.narcodisp = narcodisp;
+        this.psychodisp = psychodisp;
+        this.military = military;
+        this.docphoto = docphoto;
+        this.refmainjob = refmainjob;
+        this.marriage = marriage;
+        this.cash = cash;
+        this.forma086 = forma086;
         this.fileByte = fileByte;
     }
     return UserDocs;

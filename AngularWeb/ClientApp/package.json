@@ -21,8 +21,11 @@
     "@angular/platform-browser-dynamic": "11.2.7",
     "@angular/platform-server": "11.2.7",
     "@angular/router": "11.2.7",
+    "@fancyapps/fancybox": "^3.5.7",
     "@ionic-native/http": "^5.31.1",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
+    "@types/fancybox": "^3.5.2",
+    "angular-fancybox-plus": "^1.0.3",
     "bootstrap": "^4.6.0",
     "core-js": "^3.8.3",
     "jquery": "^3.5.1",
@@ -36,7 +39,7 @@
     "zone.js": "0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.803.29",
+    "@angular-devkit/build-angular": "^0.1102.10",
     "@angular/cli": "^11.2.6",
     "@angular/compiler-cli": "^11.2.7",
     "@angular/language-service": "^11.2.7",

@@ -1,16 +1,234 @@
+
+<h2 style="display:none;">Check: {{mail}}</h2>
 <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  <div class="container">
+    <p>
+      Данные сотрудника
+    </p>
+    <table class="registr">
+      <tr>
+        <td class="td-col1"><p>Фамилия:</p></td>
+        <td>
+          <input type="text" [(ngModel)]="users.surname" value="{{users.surname}}" disabled />
+          <span asp-validation-for="Surname"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1"><p>Имя:</p></td>
+        <td>
+          <input type="text" value="{{users.name}}" disabled />
+          <span asp-validation-for="Name"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1"><p>Отчество:</p></td>
+        <td>
+          <input type="text" value="{{users.lastname}}" disabled />
+          <span asp-validation-for="Lastname"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1"><p>Пол:</p></td>
+        <td>
+          {{users.male?'Жен':'Муж'}}
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1"><p>Дата рождение:</p></td>
+        <td>
+          <input type="text" value="{{users.birthDate | date :'short'}}" disabled />
+          <span asp-validation-for="BirthDate"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1"><p>Телефон:</p></td>
+        <td>
+          <input type="text" value="{{users.phone}}" disabled />
+          <span asp-validation-for="Phone"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1"><p>E-Mail:</p></td>
+        <td>
+          <input type="text" value="{{users.email}}" disabled />
+          <span asp-validation-for="Email"></span>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Specialization:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.specialization" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+        <td>
+          <input class="form-control" name="title"
+                 (change)="onTitleChange(2,$event.target.value)" />
+        </td>
+      </tr>
+      <tr>
+        <app-img-comment [nameCat]="'Specialization'" [nameImg]="userdocs.specialization" [userid]="userid"></app-img-comment>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Udv:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.udv" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+        <td>
+          <input class="form-control" name="title"
+                 (change)="onTitleChange(3,$event.target.value)" />
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Pension:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.pension" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Certificates:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.certificates" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Employhis:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.employhis" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Addres:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.addres" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Conviction:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.conviction" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      <tr>
+        <td class="td-col1">
+          Narcodisp:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.narcodisp" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      <tr>
+        <td class="td-col1">
+          Psychodisp:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.psychodisp" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Military:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.military" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Docphoto:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.docphoto" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Refmainjob:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.refmainjob" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Marriage:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.marriage" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Cash:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.cash" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="td-col1">
+          Forma086:
+        </td>
+        <td align="left" class="left_menu">
+
+          <a *ngFor="let u of userdocs.forma086" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+          </a>
+        </td>
+      </tr>
+    </table>
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+

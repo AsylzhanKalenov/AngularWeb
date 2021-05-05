@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Position = exports.Company = exports.Role = exports.User = void 0;
-var User = /** @class */ (function () {
-    function User(id, name, surname, lastname, male, status, birthDate, phone, email, password, defaultpass, regDate, roleId, companyId, positionId, role, company, position) {
+exports.Position = exports.Company = exports.Role = exports.Users = void 0;
+var Users = /** @class */ (function () {
+    function Users(id, name, surname, lastname, male, status, birthDate, phone, email, password, defaultpass, regDate, roleId, companyId, positionId, role, company, position) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -22,9 +22,9 @@ var User = /** @class */ (function () {
         this.company = company;
         this.position = position;
     }
-    return User;
+    return Users;
 }());
-exports.User = User;
+exports.Users = Users;
 var Role = /** @class */ (function () {
     function Role(id, name) {
         this.id = id;
@@ -49,4 +49,4 @@ var Position = /** @class */ (function () {
     return Position;
 }());
 exports.Position = Position;
-//# sourceMappingURL=user.js.map
+//# sourceMappingURL=User.js.map

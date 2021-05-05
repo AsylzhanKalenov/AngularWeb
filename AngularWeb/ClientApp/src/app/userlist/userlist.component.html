@@ -21,8 +21,6 @@
       <a class="nav-link" href="#">Отмененные</a>
     </li>
   </ul>
-
-
   <h5 style="color: #517187;">Поиск:</h5>
   <div class="search">
     <table>
@@ -56,8 +54,6 @@
         <td>
           <input type="button" class="btn btn-success" value="Найти" (click)="searchUser()">
         </td>
-
-
       </tr>
     </table>
   </div>
@@ -85,10 +81,8 @@
         <td>{{u.name}}</td>
         <td>{{u.position!=null?u.position.name:''}}</td>
         <td>{{u.regDate | date :'short'}}</td>
-        <td><input type="button" name="btn" value="Просмотреть"></td>
+        <td><a class="btn" [routerLink]="['/check-user', u.id ,u.email]" [state]="{userid: u.id, email: u.email}">Просмотреть</a></td>
     </tr>
-
-    
   </table>
 
 </div>
