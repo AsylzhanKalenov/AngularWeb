@@ -1,14 +1,16 @@
-<td class="td-col1">
-  {{nameCat}}:
-</td>
-<td align="left" class="left_menu">
 
-  <a *ngFor="let u of nameImg" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-    <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-  </a>
-</td>
-<td>
-  <input class="form-control" name="comment"
-          [(ngModel)]="comment" #phoneTitle="ngModel"
-         (change)="onTitleChange(2,$event.target.value)" />
-</td>
+  <td class="td-col1">
+    {{nameCat}}:
+  </td>
+  <td align="left" class="left_menu">
+
+    <a *ngFor="let u of nameImg" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+      <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+    </a>
+  </td>
+  <td>
+    <input class="form-control" name="comment"
+           [(ngModel)]="comment" #phoneTitle="ngModel"
+           (change)="onTitleChange(catid,$event.target.value)" />
+
+  </td>

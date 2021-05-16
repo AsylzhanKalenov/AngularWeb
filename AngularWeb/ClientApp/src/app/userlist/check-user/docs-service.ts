@@ -34,4 +34,7 @@ export class DocsService {
   postComment(check: CheckCat) {
     return this.http.post(this.urlCheck, check);
   }
+  getComment(userid: number, catid: number): Observable<CheckCat> {
+    return this.http.get(this.urlCheck + '/GetCheckCatByUser?userid=' + userid+'&catid='+catid);
+  }
 }

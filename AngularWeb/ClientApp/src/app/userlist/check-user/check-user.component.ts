@@ -14,6 +14,7 @@ import { DocsService } from './docs-service';
   providers: [DocsService]
 })
 export class CheckUserComponent implements OnInit {
+  check: boolean = false;
   st: any;
   comm: any;
   mail: string;

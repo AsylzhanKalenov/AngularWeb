@@ -54,180 +54,51 @@
           <span asp-validation-for="Email"></span>
         </td>
       </tr>
-      <tr>
-        <td class="td-col1">
-          Specialization:
-        </td>
-        <td align="left" class="left_menu">
+      <!--<tr>
+    <td class="td-col1">
+      Specialization:
+    </td>
+    <td align="left" class="left_menu">
 
-          <a *ngFor="let u of userdocs.specialization" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-        <td>
-          <input class="form-control" name="title"
-                 (change)="onTitleChange(2,$event.target.value)" />
-        </td>
-      </tr>
-      <tr>
-        <app-img-comment [nameCat]="'Specialization'" [nameImg]="userdocs.specialization" [userid]="userid"></app-img-comment>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Udv:
-        </td>
-        <td align="left" class="left_menu">
+      <a *ngFor="let u of userdocs.specialization" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+        <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+      </a>
+    </td>
+    <td>
+      <input class="form-control" name="title"
+             (change)="onTitleChange(2,$event.target.value)" />
+    </td>
+  </tr>-->
+      <tr app-img-comment [nameCat]="'Specialization'" [nameImg]="userdocs.specialization" [userid]="userid" [catid]="2"></tr>
 
-          <a *ngFor="let u of userdocs.udv" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-        <td>
-          <input class="form-control" name="title"
-                 (change)="onTitleChange(3,$event.target.value)" />
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Pension:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Udv'" [nameImg]="userdocs.udv" [userid]="userid" [catid]="3"></tr>
 
-          <a *ngFor="let u of userdocs.pension" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Certificates:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Pension'" [nameImg]="userdocs.pension" [userid]="userid" [catid]="4"></tr>
 
-          <a *ngFor="let u of userdocs.certificates" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Employhis:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Certificates'" [nameImg]="userdocs.certificates" [userid]="userid" [catid]="5"></tr>
 
-          <a *ngFor="let u of userdocs.employhis" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Addres:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Employhis'" [nameImg]="userdocs.employhis" [userid]="userid" [catid]="6"></tr>
 
-          <a *ngFor="let u of userdocs.addres" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Conviction:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Addres'" [nameImg]="userdocs.addres" [userid]="userid" [catid]="7"></tr>
 
-          <a *ngFor="let u of userdocs.conviction" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      <tr>
-        <td class="td-col1">
-          Narcodisp:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Conviction'" [nameImg]="userdocs.conviction" [userid]="userid" [catid]="8"></tr>
 
-          <a *ngFor="let u of userdocs.narcodisp" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      <tr>
-        <td class="td-col1">
-          Psychodisp:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Narcodisp'" [nameImg]="userdocs.narcodisp" [userid]="userid" [catid]="9"></tr>
 
-          <a *ngFor="let u of userdocs.psychodisp" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Military:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Psychodisp'" [nameImg]="userdocs.psychodisp" [userid]="userid" [catid]="10"></tr>
 
-          <a *ngFor="let u of userdocs.military" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Docphoto:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Military'" [nameImg]="userdocs.military" [userid]="userid" [catid]="11"></tr>
 
-          <a *ngFor="let u of userdocs.docphoto" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Refmainjob:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Docphoto'" [nameImg]="userdocs.docphoto" [userid]="userid" [catid]="12"></tr>
 
-          <a *ngFor="let u of userdocs.refmainjob" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Marriage:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Refmainjob'" [nameImg]="userdocs.refmainjob" [userid]="userid" [catid]="13"></tr>
 
-          <a *ngFor="let u of userdocs.marriage" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Cash:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Marriage'" [nameImg]="userdocs.marriage" [userid]="userid" [catid]="14"></tr>
 
-          <a *ngFor="let u of userdocs.cash" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1">
-          Forma086:
-        </td>
-        <td align="left" class="left_menu">
+      <tr app-img-comment [nameCat]="'Cash'" [nameImg]="userdocs.cash" [userid]="userid" [catid]="15"></tr>
 
-          <a *ngFor="let u of userdocs.forma086" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-            <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-          </a>
-        </td>
-      </tr>
+      <tr app-img-comment [nameCat]="'Forma086'" [nameImg]="userdocs.forma086" [userid]="userid" [catid]="16"></tr>
+
     </table>
   </div>
 </form>
