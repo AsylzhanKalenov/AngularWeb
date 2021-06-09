@@ -31,8 +31,14 @@ export class DocsService {
   GetUserDocByUserId(id: number): Observable<UserDocs> {
     return this.http.get(this.urlDocs + '/GetUserDocByUserId?userid='+id)
   }
+  editUser(id: number, user: Users) {
+    return this.http.put(this.urlUsers+'/'+id, user)
+  }
   postComment(check: CheckCat) {
     return this.http.post(this.urlCheck, check);
+  }
+  setStatus(id: number, user: Users) {
+    return this.http.put(this.urlUsers + '/SetStatus/' + id, user);
   }
   getComment(userid: number, catid: number): Observable<CheckCat> {
     return this.http.get(this.urlCheck + '/GetCheckCatByUser?userid=' + userid+'&catid='+catid);

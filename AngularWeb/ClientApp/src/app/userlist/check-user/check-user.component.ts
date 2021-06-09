@@ -6,6 +6,7 @@ import { Users, Role, Company } from '../users';
 import { UserDocs } from './UserDocs';
 import { CheckCat } from './CheckCat';
 import { DocsService } from './docs-service';
+import { data } from 'jquery';
 
 @Component({
   selector: 'app-check-user',
@@ -23,6 +24,13 @@ export class CheckUserComponent implements OnInit {
   onchstr: string;
   users: Users = new Users();
   userdocs: UserDocs = new UserDocs;
+  status_results = [
+    { id: 1, name: "Не проверен" },
+    { id: 2, name: "Ошибка" },
+    { id: 3, name: "Правильно" }
+  ];
+
+  selectedValue: any;
 
   constructor(private location: Location, private docsService: DocsService, private _Activatedroute: ActivatedRoute) {  }
 
@@ -67,5 +75,10 @@ export class CheckUserComponent implements OnInit {
     console.log(ch);
     this.docsService.postComment(ch)
       .subscribe(data => this.comm = data);
+  }
+  onStatusChange(val) {
+    //alert(val[3] + ', ' + this.selectedValue);
+    this.users.status = parseInt(val[3]);
+    this.docsService.setStatus(this.users.id, this.users).subscribe(data => console.log(data));
   }
 }

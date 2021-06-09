@@ -5,101 +5,112 @@
     <p>
       Данные сотрудника
     </p>
-    <table class="registr">
-      <tr>
-        <td class="td-col1"><p>Фамилия:</p></td>
-        <td>
-          <input type="text" [(ngModel)]="users.surname" value="{{users.surname}}" disabled />
-          <span asp-validation-for="Surname"></span>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1"><p>Имя:</p></td>
-        <td>
-          <input type="text" value="{{users.name}}" disabled />
-          <span asp-validation-for="Name"></span>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1"><p>Отчество:</p></td>
-        <td>
-          <input type="text" value="{{users.lastname}}" disabled />
-          <span asp-validation-for="Lastname"></span>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1"><p>Пол:</p></td>
-        <td>
-          {{users.male?'Жен':'Муж'}}
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1"><p>Дата рождение:</p></td>
-        <td>
-          <input type="text" value="{{users.birthDate | date :'short'}}" disabled />
-          <span asp-validation-for="BirthDate"></span>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1"><p>Телефон:</p></td>
-        <td>
-          <input type="text" value="{{users.phone}}" disabled />
-          <span asp-validation-for="Phone"></span>
-        </td>
-      </tr>
-      <tr>
-        <td class="td-col1"><p>E-Mail:</p></td>
-        <td>
-          <input type="text" value="{{users.email}}" disabled />
-          <span asp-validation-for="Email"></span>
-        </td>
-      </tr>
-      <!--<tr>
-    <td class="td-col1">
-      Specialization:
-    </td>
-    <td align="left" class="left_menu">
+    <div class="row">
+      <div class="col-md-3">
+        <select name="status_results" formControlName="status_results" class="form-control form-control-sm select" [(ngModel)]="selectedValue" (change)="onStatusChange($event.target.value)">
+          <option *ngFor="let c of status_results" [ngValue]="c.id">{{c.name}}</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <input type="button" class="btn btn-primary" name="name" value="done" />
+      </div>
+      </div>
+      <br />
+      <table class="registr">
+        <tr>
+          <td class="td-col1"><p>Фамилия:</p></td>
+          <td>
+            <input type="text" [(ngModel)]="users.surname" value="{{users.surname}}" disabled />
+            <span asp-validation-for="Surname"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-col1"><p>Имя:</p></td>
+          <td>
+            <input type="text" value="{{users.name}}" disabled />
+            <span asp-validation-for="Name"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-col1"><p>Отчество:</p></td>
+          <td>
+            <input type="text" value="{{users.lastname}}" disabled />
+            <span asp-validation-for="Lastname"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-col1"><p>Пол:</p></td>
+          <td>
+            {{users.male?'Жен':'Муж'}}
+          </td>
+        </tr>
+        <tr>
+          <td class="td-col1"><p>Дата рождение:</p></td>
+          <td>
+            <input type="text" value="{{users.birthDate | date :'short'}}" disabled />
+            <span asp-validation-for="BirthDate"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-col1"><p>Телефон:</p></td>
+          <td>
+            <input type="text" value="{{users.phone}}" disabled />
+            <span asp-validation-for="Phone"></span>
+          </td>
+        </tr>
+        <tr>
+          <td class="td-col1"><p>E-Mail:</p></td>
+          <td>
+            <input type="text" value="{{users.email}}" disabled />
+            <span asp-validation-for="Email"></span>
+          </td>
+        </tr>
+        <!--<tr>
+      <td class="td-col1">
+        Specialization:
+      </td>
+      <td align="left" class="left_menu">
 
-      <a *ngFor="let u of userdocs.specialization" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
-        <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
-      </a>
-    </td>
-    <td>
-      <input class="form-control" name="title"
-             (change)="onTitleChange(2,$event.target.value)" />
-    </td>
-  </tr>-->
-      <tr app-img-comment [nameCat]="'Specialization'" [nameImg]="userdocs.specialization" [userid]="userid" [catid]="2"></tr>
+        <a *ngFor="let u of userdocs.specialization" data-fancybox="gallery" href="https://localhost:44340/api/userdocs/GetImage/{{u}}">
+          <img src="https://localhost:44340/api/userdocs/GetImage/{{u}}" class="box transform" width="100" style="border: 1px dashed #33D8FF;">
+        </a>
+      </td>
+      <td>
+        <input class="form-control" name="title"
+               (change)="onTitleChange(2,$event.target.value)" />
+      </td>
+    </tr>-->
+        <tr app-img-comment [nameCat]="'Specialization'" [nameImg]="userdocs.specialization" [userid]="userid" [catid]="2"></tr>
 
-      <tr app-img-comment [nameCat]="'Udv'" [nameImg]="userdocs.udv" [userid]="userid" [catid]="3"></tr>
+        <tr app-img-comment [nameCat]="'Udv'" [nameImg]="userdocs.udv" [userid]="userid" [catid]="3"></tr>
 
-      <tr app-img-comment [nameCat]="'Pension'" [nameImg]="userdocs.pension" [userid]="userid" [catid]="4"></tr>
+        <tr app-img-comment [nameCat]="'Pension'" [nameImg]="userdocs.pension" [userid]="userid" [catid]="4"></tr>
 
-      <tr app-img-comment [nameCat]="'Certificates'" [nameImg]="userdocs.certificates" [userid]="userid" [catid]="5"></tr>
+        <tr app-img-comment [nameCat]="'Certificates'" [nameImg]="userdocs.certificates" [userid]="userid" [catid]="5"></tr>
 
-      <tr app-img-comment [nameCat]="'Employhis'" [nameImg]="userdocs.employhis" [userid]="userid" [catid]="6"></tr>
+        <tr app-img-comment [nameCat]="'Employhis'" [nameImg]="userdocs.employhis" [userid]="userid" [catid]="6"></tr>
 
-      <tr app-img-comment [nameCat]="'Addres'" [nameImg]="userdocs.addres" [userid]="userid" [catid]="7"></tr>
+        <tr app-img-comment [nameCat]="'Addres'" [nameImg]="userdocs.addres" [userid]="userid" [catid]="7"></tr>
 
-      <tr app-img-comment [nameCat]="'Conviction'" [nameImg]="userdocs.conviction" [userid]="userid" [catid]="8"></tr>
+        <tr app-img-comment [nameCat]="'Conviction'" [nameImg]="userdocs.conviction" [userid]="userid" [catid]="8"></tr>
 
-      <tr app-img-comment [nameCat]="'Narcodisp'" [nameImg]="userdocs.narcodisp" [userid]="userid" [catid]="9"></tr>
+        <tr app-img-comment [nameCat]="'Narcodisp'" [nameImg]="userdocs.narcodisp" [userid]="userid" [catid]="9"></tr>
 
-      <tr app-img-comment [nameCat]="'Psychodisp'" [nameImg]="userdocs.psychodisp" [userid]="userid" [catid]="10"></tr>
+        <tr app-img-comment [nameCat]="'Psychodisp'" [nameImg]="userdocs.psychodisp" [userid]="userid" [catid]="10"></tr>
 
-      <tr app-img-comment [nameCat]="'Military'" [nameImg]="userdocs.military" [userid]="userid" [catid]="11"></tr>
+        <tr app-img-comment [nameCat]="'Military'" [nameImg]="userdocs.military" [userid]="userid" [catid]="11"></tr>
 
-      <tr app-img-comment [nameCat]="'Docphoto'" [nameImg]="userdocs.docphoto" [userid]="userid" [catid]="12"></tr>
+        <tr app-img-comment [nameCat]="'Docphoto'" [nameImg]="userdocs.docphoto" [userid]="userid" [catid]="12"></tr>
 
-      <tr app-img-comment [nameCat]="'Refmainjob'" [nameImg]="userdocs.refmainjob" [userid]="userid" [catid]="13"></tr>
+        <tr app-img-comment [nameCat]="'Refmainjob'" [nameImg]="userdocs.refmainjob" [userid]="userid" [catid]="13"></tr>
 
-      <tr app-img-comment [nameCat]="'Marriage'" [nameImg]="userdocs.marriage" [userid]="userid" [catid]="14"></tr>
+        <tr app-img-comment [nameCat]="'Marriage'" [nameImg]="userdocs.marriage" [userid]="userid" [catid]="14"></tr>
 
-      <tr app-img-comment [nameCat]="'Cash'" [nameImg]="userdocs.cash" [userid]="userid" [catid]="15"></tr>
+        <tr app-img-comment [nameCat]="'Cash'" [nameImg]="userdocs.cash" [userid]="userid" [catid]="15"></tr>
 
-      <tr app-img-comment [nameCat]="'Forma086'" [nameImg]="userdocs.forma086" [userid]="userid" [catid]="16"></tr>
+        <tr app-img-comment [nameCat]="'Forma086'" [nameImg]="userdocs.forma086" [userid]="userid" [catid]="16"></tr>
 
-    </table>
-  </div>
+      </table>
+    </div>
 </form>
 

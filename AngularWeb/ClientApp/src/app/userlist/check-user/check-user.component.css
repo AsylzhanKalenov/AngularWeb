@@ -6,3 +6,6 @@ table.registr tr td input.uncorrect {
   width: 2em;
   height: 1.6em;
 }
+form {
+  margin-bottom: 50px;
+}
